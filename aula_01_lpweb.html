@@ -35,6 +35,19 @@
       }
     </style>
     <script type="text/javascript">
+    function calcNum(num) {
+       if (typeof gvisor == 'undefined') {
+          document.calcform.display.value = '';
+       }
+       document.calcform.display.value = document.calcform.display.value + num;
+       gvisor = 0;
+    }
+    function limparVisor(){
+      document.calcform.display.value = ''
+       delete gvalor;
+       delete goper;
+       delete gvisor;
+    }
     function calcOper(oper, valor1, valor2) {
        if (oper == "som") {
           var valor = parseFloat(valor1) + parseFloat(valor2);
